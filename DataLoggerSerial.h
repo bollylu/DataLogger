@@ -8,10 +8,10 @@
 
 #include "DataLoggerBase.h"
 
-class DataLoggerText : public DataLoggerBase {
+class DataLoggerSerial : public DataLoggerBase {
 public:
-  DataLoggerText();
-  virtual ~DataLoggerText();
+  DataLoggerSerial();
+  virtual ~DataLoggerSerial();
 
   void LogData(String data);
 

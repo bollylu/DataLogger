@@ -27,7 +27,10 @@
     <ClInclude Include="DataLoggerBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DataLoggerText.h">
+    <ClInclude Include="DataLoggerSerial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DataLoggerLcd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -38,7 +41,10 @@
     <ClCompile Include="DataLoggerBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DataLoggerText.cpp">
+    <ClCompile Include="DataLoggerSerial.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DataLoggerLcd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
