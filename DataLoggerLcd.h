@@ -13,11 +13,14 @@ public:
   byte PinD4;
 
   DataLoggerLcd();
+  DataLoggerLcd(byte pinRS, byte pinEN, byte pinD1, byte pinD2, byte pinD3, byte pinD4);
   ~DataLoggerLcd();
   void LogData(String data);
 
 private:
   LiquidCrystal* _Lcd;
+
+  void Initialize(byte pinRS, byte pinEN, byte pinD1, byte pinD2, byte pinD3, byte pinD4);
 
 };
 

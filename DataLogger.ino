@@ -10,6 +10,13 @@
 #define PIN_ONEWIRE_BUS 13
 Thermometre* Th1;
 
+#define   LCDRS           6
+#define   LCDEN           7
+#define   LCDD1          14
+#define   LCDD2          15
+#define   LCDD3          16
+#define   LCDD4          17
+
 #define LOGGERS_COUNT 2
 DataLoggerBase* Loggers[LOGGERS_COUNT];
 
@@ -23,7 +30,7 @@ void setup() {
   Th1 = new Thermometre(PIN_ONEWIRE_BUS);
   Th1->SetResolution(12);
 
-  Loggers[0] = new DataLoggerLcd();
+  Loggers[0] = new DataLoggerLcd(LCDRS, LCDEN, LCDD1, LCDD2, LCDD3, LCDD4);
   Loggers[1] = new DataLoggerSerial();
 
 }

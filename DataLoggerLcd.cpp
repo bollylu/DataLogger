@@ -1,14 +1,18 @@
 #include "DataLoggerLcd.h"
 
-
 DataLoggerLcd::DataLoggerLcd() {
-  PinEN = 7;
-  PinRS = 6;
-  PinD1 = 14;
-  PinD2 = 15;
-  PinD3 = 16;
-  PinD4 = 17;
-  _Lcd = new LiquidCrystal(PinRS, PinEN, PinD1, PinD2, PinD3, PinD4);
+  Initialize(6, 7, 14, 15, 16, 17);
+}
+DataLoggerLcd::DataLoggerLcd(byte pinRS, byte pinEN, byte pinD1, byte pinD2, byte pinD3, byte pinD4) {
+  Initialize(pinRS, pinEN, pinD1, pinD2, pinD3, pinD4);
+}
+
+DataLoggerLcd::~DataLoggerLcd() {
+  delete _Lcd;
+}
+
+void DataLoggerLcd::Initialize(byte pinRS, byte pinEN, byte pinD1, byte pinD2, byte pinD3, byte pinD4) {
+  _Lcd = new LiquidCrystal(pinRS, pinEN, pinD1, pinD2, pinD3, pinD4);
 
   byte degres[8] = {
     0b01000,
@@ -20,17 +24,10 @@ DataLoggerLcd::DataLoggerLcd() {
     0b00011,
     0b00000
   };
+
   _Lcd->createChar(1, degres);
-
-  // Initialisations   
   _Lcd->begin(16, 2);
-  
-  //_Lcd->autoscroll();
-}
 
-
-DataLoggerLcd::~DataLoggerLcd() {
-  delete _Lcd;
 }
 
 void DataLoggerLcd::LogData(String data) {
