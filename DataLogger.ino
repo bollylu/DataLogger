@@ -49,6 +49,8 @@ void loop() {
     }
   }
 
+  delay(250); // Lower power consumption ?
+
 }
 
 
